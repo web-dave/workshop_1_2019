@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "wd-mouse-cursor",
@@ -6,6 +6,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./mouse-cursor.component.scss"]
 })
 export class MouseCursorComponent implements OnInit {
+  @Input() isHidden: boolean;
+
   ox: number;
   oy: number;
   constructor() {}

@@ -8,10 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prehase": "echo PREHASE",
-    "hase": "echo HASE",
-    "posthase": "echo POSTHASE",
-    "pre": "echo pre"
+    "rest": "bookmonkey-api"
   },
   "private": true,
   "dependencies": {
@@ -33,9 +30,10 @@
     "@angular/cli": "~7.2.1",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~10.12.18",
     "@types/jasmine": "~3.3.5",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~10.12.18",
+    "bookmonkey-api": "^2.0.3",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",

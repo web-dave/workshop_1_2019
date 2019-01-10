@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "wd-info-box",
@@ -7,7 +7,13 @@ import { Component, OnInit } from "@angular/core";
 })
 export class InfoBoxComponent implements OnInit {
   isHidden = false;
+  @Output() hide = new EventEmitter<boolean>();
   constructor() {}
+
+  hider() {
+    this.isHidden = !this.isHidden;
+    this.hide.emit(this.isHidden);
+  }
 
   ngOnInit() {}
 }
