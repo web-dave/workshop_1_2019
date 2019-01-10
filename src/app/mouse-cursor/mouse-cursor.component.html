@@ -1,0 +1,11 @@
+<div
+  (mousemove)="move($event)"
+  style="height: 400px; width: 400px; border: 1px solid"
+>
+  <span
+    style="position: relative"
+    [style.top]="oy + 'px'"
+    [style.left]="ox + 'px'"
+    >{{ ox }}/{{ oy }}</span
+  >
+</div>

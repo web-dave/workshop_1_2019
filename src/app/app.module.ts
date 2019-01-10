@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { AboutModule } from './about/about.module';
 import { BooksModule } from './books/books.module';
 import { NavigationComponent } from './navigation/navigation.component';
+import { InfoBoxComponent } from './info-box/info-box.component';
+import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    InfoBoxComponent,
+    MouseCursorComponent
   ],
   imports: [
     BrowserModule,
