@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
+import { BookService } from "../book.service";
 
 @Component({
   selector: "wd-book-new",
@@ -8,7 +9,7 @@ import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 })
 export class BookNewComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private service: BookService) {}
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -17,5 +18,6 @@ export class BookNewComponent implements OnInit {
   }
   save() {
     console.log(this.form);
+    this.service.saveBook(this.form.value).subscribe(() => {});
   }
 }
