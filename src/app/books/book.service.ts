@@ -13,4 +13,7 @@ export class BookService {
   getBook(isbn) {
     return this.http.get<IBook>(`${this.url}${isbn}`);
   }
+  updateBook(book: IBook) {
+    return this.http.put<IBook>(`${this.url}${book.isbn}`, book);
+  }
 }

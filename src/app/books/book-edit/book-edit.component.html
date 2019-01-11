@@ -1,6 +1,12 @@
-<form #form="ngForm" *ngIf="book">
+<form #form="ngForm" *ngIf="book" (ngSubmit)="save()">
   <label for="title">Title:</label><br />
-  <input type="text" [(ngModel)]="book.title" name="title" #title="ngModel" />
+  <input
+    type="text"
+    [(ngModel)]="book.title"
+    name="title"
+    #title="ngModel"
+    required
+  />
   <br />
   <label for="abstract">Abstract:</label><br />
   <input
@@ -17,4 +23,7 @@
     name="author"
     #author="ngModel"
   />
+  <br />
+  <button type="submit" [disabled]="form.invalid">submit</button>
 </form>
+<a [routerLink]="['..']">back</a>

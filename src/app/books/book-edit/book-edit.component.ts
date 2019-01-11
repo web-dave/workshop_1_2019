@@ -13,12 +13,20 @@ import { mergeMap } from "rxjs/operators";
 export class BookEditComponent implements OnInit, OnDestroy {
   book: IBook;
   sub: Subscription;
+  foo;
   constructor(private route: ActivatedRoute, private service: BookService) {}
 
   ngOnInit() {
     this.sub = this.route.params
       .pipe(mergeMap(params => this.service.getBook(params.isbn)))
       .subscribe(b => (this.book = b));
+
+    // this.sub = this.route.params.subscribe(params => {
+    //   this.service.getBook(params.isbn).subscribe(b => (this.book = b));
+    // });
+  }
+  save() {
+    this.service.updateBook(this.book).subscribe(() => {});
   }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
