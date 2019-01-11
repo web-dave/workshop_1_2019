@@ -10,8 +10,4 @@ export class NavigationComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  hu(e) {
-    console.log(e);
-  }
 }
